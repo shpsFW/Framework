@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>shps Demo</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f0f0f0;
+      padding: 2rem;
+    }
+
+    #app {
+      background: white;
+      border-radius: 8px;
+      padding: 2rem;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+    }
+
+    button {
+      background: #296CFF;
+      border: none;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #1f55cc;
+    }
+  </style>
+  <script type="module">
+    import { createElement, render } from '../src/shps.js';
+
+    const App = createElement("div", { id: "app" }, [
+      createElement("h1", {}, ["Welcome to shps"]),
+      createElement("p", {}, ["This is a minimal UI framework."]),
+      createElement("button", {
+        onClick: () => alert("Hello from shps!")
+      }, ["Click Me"])
+    ]);
+
+    render(document.body, App);
+  </script>
+</head>
+<body></body>
+</html>
